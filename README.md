@@ -15,7 +15,9 @@ Follow the examples in PyU4V github to create your own functions.
 
 WHAT'S SUPPORTED
 
-This package supports VMware vCenter REST API 6.5 https://code.vmware.com/apis/62/vcenter-management#/ for more information on whats supported
+This package will support any REST API with a few tweaks.  
+
+For more information about what can be done with VMware vCenter REST API 6.5  see
 
 https://code.vmware.com/apis/52/content
 https://code.vmware.com/apis/62/vcenter-management
