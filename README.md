@@ -32,11 +32,6 @@ To give it a try, download the files and add your server and array details to th
 SSL CONFIGURATION
 Haven't tested this piece, SSL configuration should be similar to that in PyU4V.
 
-Get the CA certificate of the Unisphere server. $ openssl s_client -showcerts -connect {server_hostname}:8443 </dev/null 2>/dev/null|openssl x509 -outform PEM > {server_hostname}.lss.emc.com.pem (This pulls the CA cert file and saves it as server_hostname.lss.emc.com.pem e.g. esxi01vm01.lss.emc.com.pem)
-Copy the pem file to the system certificate directory $ sudo cp {server_hostname}.lss.emc.com.pem /usr/share/ca-certificates/{server_hostname}.lss.emc.com.lss.emc.com.crt
-Update CA certificate database with the following commands $ sudo dpkg-reconfigure ca-certificates (Ensure the new cert file is highlighted) $ sudo update-ca-certificates
-In the conf file insert the following: verify=/path-to-file/irco3sd23vm08.lss.emc.com.pem OR pass the value in on initialization.
-USAGE
 
 PyVCR could also be used as the backend for a script, or a menu etc. Just move the PyU4V package into your working directory and import it into your script ('from PyVCR.rest_vcenter import rest_functions'), create an instance of rest_functions.
 e.g.
@@ -53,7 +48,7 @@ FUTURE
 
 This is still a work in progress. To be expected in the future:
 
-I'm probably not going to take this much futher until more storage related endpoints come online.  Please feel free to contribute though, the bones of what you need are here and you should be able to run with it.  Check out the examples of how we used this in PyU4V and you should be able to replicate similar functions based on the VMware API
+Please feel free to contribute, the bones of what you need are here and you should be able to run with it.  Check out the examples of how we used this in PyU4V and you should be able to replicate similar functions based on the VMware API
 
 CONTRIBUTION
 
