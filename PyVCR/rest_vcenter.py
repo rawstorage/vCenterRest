@@ -108,21 +108,78 @@ class rest_functions:
         return data
 
     ###############################
-    # system functions
+    # system functions USE https://code.vmware.com/apis/62/vcenter-management API explorer to find more endpoints
     ###############################
 
-    def get_all_vm(self, filters=None):
-        """Queries for a list of All Alert ids across all symmetrix arrays.
-
-        Optionally can be filtered by: create_date_milliseconds(=<>),
-        description(=<>), type, severity, state, created_date, acknowledged.
-        :param filters: dict of filters - optional
+    def get_all_vm(self):
+        """Generates a list of all VMs
+        :param No Parameters required
         :return: dict, status_code
         """
         target_uri = "/vcenter/vm"
         return self.rest_client.rest_request(target_uri, GET)
 
     def set_session(self):
+        '''
+        Run this function first and include in all scripts, will generate a session
+        :return: 
+        '''
         target_uri ="/com/vmware/cis/session"
 
         return self.rest_client.rest_request(target_uri,POST)
+
+    def get_hosts(self):
+        '''
+        Get a list of all hosts in vCenter
+        :return: 
+        '''
+        target_uri = "/vcenter/host"
+
+        return self.rest_client.rest_request(target_uri, GET)
+    def get_cluster(self):
+        '''
+        Get a list of all clusters in vCenter
+        :return: 
+        '''
+        target_uri = "/vcenter/cluster"
+
+        return self.rest_client.rest_request(target_uri, GET)
+
+    def get_cluster_config(self, cluster_id):
+        '''
+
+        :param cluster_id: 
+        :return: 
+        '''
+        target_uri = "/vcenter/cluster/%s" % (cluster_id)
+
+        return self.rest_client.rest_request(target_uri, GET)
+
+    def get_datastores(self):
+        '''
+        Get a list of all Datastores in vCenter
+        :return: 
+        '''
+        target_uri = "/vcenter/datastore"
+
+        return self.rest_client.rest_request(target_uri, GET)
+
+    def get_datastore_config(self,datastore):
+        '''
+        
+        :param datastore: 
+        :return: 
+        '''
+        target_uri = "/vcenter/datastore/%s" %(datastore)
+
+        return self.rest_client.rest_request(target_uri, GET)
+
+    def get_network(self):
+        '''
+        Get a list of all hosts in vCenter
+        :return: 
+        '''
+        target_uri = "/vcenter/network"
+
+        return self.rest_client.rest_request(target_uri, GET)
+
