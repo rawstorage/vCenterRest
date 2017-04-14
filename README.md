@@ -9,7 +9,7 @@ install requests library
 
 python -m pip install requests.
 
-All functions should be located in the rest_functions class in PyVCR rest_requests.py file.
+All functions should be located in the rest_functions class in PyVCR rest_vcenter.py file and imported into your scripts.
 
 Follow the examples in PyU4V github to create your own functions.
 
