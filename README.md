@@ -53,7 +53,7 @@ FUTURE
 
 This is still a work in progress. To be expected in the future:
 
-I'm probably not going to take this much futher until more storage related endpoints come online.  
+I'm probably not going to take this much futher until more storage related endpoints come online.  Please feel free to contribute though, the bones of what you need are here and you should be able to run with it.  Check out the examples of how we used this in PyU4V and you should be able to replicate similar functions based on the VMware API
 
 CONTRIBUTION
 
